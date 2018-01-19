@@ -15,7 +15,7 @@ class RateImporter
 
   def save_rates(rates)
     rates_start = find_rates_start(rates)
-    rates.slice(rates_start..-20).each do |date, rate|
+    rates.slice(rates_start..-1).each do |date, rate|
       RateRecord.instance.create(date, rate)
     end
   end
